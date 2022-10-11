@@ -5,19 +5,19 @@ app_projects = Blueprint('projects', __name__,
                 template_folder='templates/bp_projects/')
 
 # connects /kangaroos path to render kangaroos.html
-@app_projects.route('/week05/')
-def week05():
-    return render_template("week05.html")
-
-# connects /kangaroos path to render kangaroos.html
-@app_projects.route('/week06/')
-def week06():
-    return render_template("week07.html")
-
-@app_projects.route('/week07/')
-def week07():
-    return render_template("week07.html")
-
 @app_projects.route('/week08/')
 def week08():
     return render_template("week08.html")
+
+# connects /kangaroos path to render kangaroos.html
+@app_projects.route('/week09/')
+def week09():
+    return render_template("week09.html")
+
+@app_projects.route('/week10/')
+def week10():
+    return render_template("week10.html")
+
+@app_projects.route('/week11/')
+def week11():
+    return render_template("week11.html")

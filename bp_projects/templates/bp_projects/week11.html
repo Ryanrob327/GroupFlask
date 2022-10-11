@@ -1,13 +1,14 @@
 <!-- Extending the project layout, as this file will do minor customizations -->
 {% extends "layouts/project.html" %}
 
-<!-- Setting up variables to customize "project" details to be specific to index page -->
-{% set project = "Week 05" %}
-{% set scrumboard = "https://github.com/users/Ryanrob327/projects/1/views/1" %}
-{% set repo = "https://github.com/Ryanrob327/FlaskCSP.git" %}
-{% set authors = "https://github.com/Ryanrob327"  %}
+<!-- Setting up variables to customize "project" details to be specific to hawkers -->
+{% set project = "Hawkers" %}
+{% set overview = "https://hawkers.nighthawkcodingsociety.com/aboutus" %}
+{% set scrumboard = "https://github.com/noyah81/p2ducks/projects/1" %}
+{% set repo = "https://github.com/noyah81/p2ducks" %}
+{% set authors = "https://nighthawkcodingsociety.com/projectsearch/details/Hawkers%20Tweet" %}
 
-
+<!-- Setting up a block replacement to customize background to BIRDS -->
 {% block background %}
     <script src="{{ url_for('static', filename='js/three.r119.min.js') }}"></script>
     <script src="{{ url_for('static', filename='js/vanta.net.min.js') }}"></script>
