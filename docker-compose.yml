@@ -13,4 +13,4 @@ volumes:
     driver_opts:
       o: bind
       type: none
-      device: /home/ubuntu/P1T3_stocks/volumes
+      device: /home/ubuntu/P3T3_stocks/volumes
