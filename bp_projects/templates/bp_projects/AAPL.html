@@ -1,38 +1,6 @@
 <!-- Extending the project layout, as this file will do minor customizations -->
 {% extends "layouts/project.html" %}
 
-<!-- Setting up variables to customize "project" details to be specific to walruses -->
-{% set project = "GME" %}
-{% set overview = "https://nighthawkcodingsociety.com/projectsearch/dash" %}
-{% set scrumboard = "https://github.com/ridhimainukurti/group-2/projects/1" %}
-{% set repo = "https://github.com/ridhimainukurti/group-2" %}
-{% set authors = "https://wasc.nighthawkcodingsociety.com/about"  %}
-
-<!-- Setting up a block replacement to customize background to RINGS -->
-{% block background %}
-    <script src="{{ url_for('static', filename='js/three.r119.min.js') }}"></script>
-    <script src="{{ url_for('static', filename='js/vanta.rings.min.js') }}"></script>
-    <script>
-        VANTA.RINGS({
-            el: "body",
-            mouseControls: true,
-            touchControls: true,
-            gyroControls: false,
-            minHeight: 200.00,
-            minWidth: 200.00,
-            scale: 1.00,
-            scaleMobile: 1.00
-        })
-    </script>
-{% endblock %}
-
-<!-- Extending the predefined project layout -->
-{% extends "layouts/base.html" %}
-
-<!-- This variable sets name of browser tab  -->
-{% set project = "Stubby" %}
-
-<!-- This is a replacement block for Body in base.html -->
 {% block body %}
     <!DOCTYPE HTML>
 <html>
@@ -42,7 +10,7 @@
     var chart = new CanvasJS.Chart("chartContainer",
     {
 
-      title:{text: "Apple Stock"},
+      title:{text: "Amount of shits Ryan gives"},
        data: [
       {
         type: "line",
@@ -120,12 +88,19 @@
     </head>
     <body>
     
-    <button onclick="link()" class="button button2">Blue</button>
+    <button onClick="link()" class="button button2">Blue</button>
+    
+    <script>
+      function link() {
+        window.location.href="https://polygon.io/";  
+      }
+    </script>
+
+    </body>
+    </html>    
 
     
     
-    </body>
-    </html>
 {% endblock %}
 
 <!-- This is turning off birds background from base.html -->
