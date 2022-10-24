@@ -1,0 +1,108 @@
+<!-- Extending the project layout, as this file will do minor customizations -->
+{% extends "layouts/project.html" %}
+
+{% block body %}
+    <!DOCTYPE HTML>
+<html>
+<head>
+  <script type="text/javascript">
+  window.onload = function () {
+    var chart = new CanvasJS.Chart("chartContainer",
+    {
+
+      title:{text: "Amount of sh Ryan gives"},
+       data: [
+      {
+        type: "line",
+
+        dataPoints: [
+        { x: new Date(2022, 00, 1), y: 600 },
+        { x: new Date(2022, 01, 1), y: 550 },
+        { x: new Date(2022, 02, 1), y: 500 },
+        { x: new Date(2022, 03, 1), y: 450 },
+        { x: new Date(2022, 04, 1), y: 400 },
+        { x: new Date(2022, 05, 1), y: 350 },
+        { x: new Date(2022, 06, 1), y: 300 },
+        { x: new Date(2022, 07, 1), y: 250 },
+        { x: new Date(2022, 08, 1), y: 200 },
+        { x: new Date(2022, 09, 1), y: 150 },
+        { x: new Date(2022, 10, 1), y: 100 },
+        { x: new Date(2022, 11, 1), y: 50 }
+        ]
+      }
+      ]
+    });
+
+    chart.render();
+  }
+  </script>
+ <script type="text/javascript" src="https://canvasjs.com/assets/script/canvasjs.min.js"></script></head>
+<body>
+  <div id="chartContainer" style="height: 500px; width: 100%;">
+  </div>
+</body>
+</html>
+<div class="px-5 py-5 mx-auto">
+    <h1 class="text-primary"><strong>Stocks Data</strong></h1>
+
+    <!DOCTYPE html>
+    <html>
+    <head>
+    <style>
+    .button {
+      border: none;
+      color: white;
+      padding: 16px 32px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 16px;
+      margin: 4px 2px;
+      transition-duration: 0.4s;
+      cursor: pointer;
+    }
+    
+    .button1 {
+      background-color: white;
+      color: black;
+      border: 2px solid #4CAF50;
+    }
+    
+    .button1:hover {
+      background-color: #4CAF50;
+      color: white;
+    }
+    
+    .button2 {
+      background-color: white;
+      color: black;
+      border: 2px solid #008CBA;
+    }
+    
+    .button2:hover {
+      background-color: #008CBA;
+      color: white;
+    }
+    
+    </style>
+    </head>
+    <body>
+    
+    <button onClick="link()" class="button button2">Blue</button>
+    
+    <script>
+      function link() {
+        window.location.href="https://polygon.io/";  
+      }
+    </script>
+
+    </body>
+    </html>    
+
+    
+    
+{% endblock %}
+
+<!-- This is turning off birds background from base.html -->
+{% block background %}
+{% endblock %}
