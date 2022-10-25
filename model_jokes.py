@@ -1,5 +1,7 @@
-stock_data = []
-stock_list = [{'GME': [{'2021-1-1:': 4.75}, {'2021-2-1:': 79.14}, {'2021-3-1:': 26.135},
+import random
+
+jokes_data = []
+joke_list = [{'GME': [{'2021-1-1:': 4.75}, {'2021-2-1:': 79.14}, {'2021-3-1:': 26.135},
                         {'2021-4-1:': 48.34}, {'2021-5-1:': 44.3725}, {'2021-6-1:': 58.37},
                         {'2021-7-1:': 53.35}, {'2021-8-1:': 40.5}, {'2021-9-1:': 56},
                         {'2021-10-1:': 44.85}, {'2021-11-1:': 45.6325}, {'2021-12-1:': 49.85}]},
@@ -16,18 +18,41 @@ stock_list = [{'GME': [{'2021-1-1:': 4.75}, {'2021-2-1:': 79.14}, {'2021-3-1:': 
                          {'2021-7-1:': 227.9733}, {'2021-8-1:': 233.3333}, {'2021-9-1:': 244.6933},
                          {'2021-10-1:': 259.4667}, {'2021-11-1:': 381.6667}, {'2021-12-1:': 386.8983}]},]
 
-        
-def initStocks():
+# Initialize jokes
+def initJokes():
     # setup jokes into a dictionary with id, joke, haha, boohoo
     item_id = 0
-    for stock in stock_list:
-        stock_data.append({"id": item_id, "stock": stock_list[item_id]})
+    for item in joke_list:
+        jokes_data.append({"id": item_id, "stock": joke_list[item_id]})
         item_id += 1
         
 # Return all jokes from jokes_data
-def getStocks():
-    return(stock_data)
+def getJokes():
+    return(jokes_data)
 
 # Joke getter
-def getStocks(id):
-    return(stock_data[id])
+def getJoke(id):
+    return(jokes_data[id])
+
+# Return random joke from jokes_data
+def getRandomJoke():
+    return(random.choice(jokes_data))
+
+# Pretty Print joke
+def printJoke(joke):
+    print(joke['id'], joke['joke'])
+
+# Number of jokes
+def countJokes():
+    return len(jokes_data)
+
+# Test Joke Model
+if __name__ == "__main__": 
+    initJokes()  # initialize jokes
+    
+    # Random joke
+    print("Random joke")
+    printJoke(getRandomJoke())
+    
+    # Count of Jokes
+    print("Jokes Count: " + str(countJokes()))
