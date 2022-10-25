@@ -21,3 +21,7 @@ def GOOGL():
 @app_projects.route('/TSLA/')
 def TSLA():
     return render_template("TSLA.html")
+
+@app_projects.route('/AMZN/')
+def AMZN():
+    return render_template("AMZN.html")
