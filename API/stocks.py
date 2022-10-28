@@ -5,11 +5,11 @@ import random
 
 from model_jokes import *
 
-joke_api = Blueprint('joke_api', __name__,
+stocks_api = Blueprint('stocks_api', __name__,
                    url_prefix='/api/stocks')
 
 # API generator https://flask-restful.readthedocs.io/en/latest/api.html#id1
-api = Api(joke_api)
+api = Api(stocks_api)
 
 class JokesAPI:
     # not implemented
