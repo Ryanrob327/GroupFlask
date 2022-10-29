@@ -3,9 +3,19 @@ from flask import render_template  # import render_template from "public" flask 
 # import "packages" from "this" project
 from __init__ import app  # Definitions initialization
 from API.stocks import stocks_api
+from API.GME import GME_api
+from API.TSLA import TSLA_api
+from API.GOOGL import GOOGL_api
+from API.AMZN import AMZN_api
+from API.AAPL import AAPL_api
 from bp_projects.projects import app_projects # Blueprint directory import projects definition
 
 app.register_blueprint(stocks_api) # register api routes
+app.register_blueprint(GME_api) # register api routes
+app.register_blueprint(TSLA_api) # register api routes
+app.register_blueprint(GOOGL_api) # register api routes
+app.register_blueprint(AMZN_api) # register api routes
+app.register_blueprint(AAPL_api) # register api routes
 app.register_blueprint(app_projects) # register api routes
 
 @app.errorhandler(404)  # catch for URL not found

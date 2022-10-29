@@ -18,10 +18,10 @@ window.onload = function () {
     theme: "light2",
     exportEnabled: true,
     title:{
-      text:"StockChart with Date-Time Axis"
+      text:"GME Stock Price"
     },
     subtitles: [{
-      text: "GME Price (in USD)"
+      text: "(in USD)"
     }],
     charts: [{
       axisX: {
@@ -49,14 +49,10 @@ window.onload = function () {
       }
     }
   });
-  $.getJSON("http://127.0.0.1:5000/api/stocks/", function(data) { //https://canvasjs.com/data/docs/btcusd2018.json
-    for(var j = 0; i < data.length; i++){
-      if(data[j] = "AAPL"){
-        for(var i = 0; i < data.length; i++){
-          dps1.push({x: new Date(data[i].date), y: [Number(data[i].open), Number(data[i].high), Number(data[i].low), Number(data[i].close)]});
-          dps2.push({x: new Date(data[i].date), y: Number(data[i].close)});
-        }
-      }
+  $.getJSON("http://127.0.0.1:5000/api/GME/", function(data) { //https://canvasjs.com/data/docs/btcusd2018.json
+    for(var i = 0; i < data.length; i++){
+      dps1.push({x: new Date(data[i].date), y: [Number(data[i].open), Number(data[i].high), Number(data[i].low), Number(data[i].close)]});
+      dps2.push({x: new Date(data[i].date), y: Number(data[i].close)});
     }
     stockChart.render();
   });

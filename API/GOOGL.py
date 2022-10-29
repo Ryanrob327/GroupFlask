@@ -5,11 +5,11 @@ import random
 
 from model_jokes import *
 
-stocks_api = Blueprint('stocks_api', __name__,
-                   url_prefix='/api/stocks')
+GOOGL_api = Blueprint('GOOGL_api', __name__,
+                   url_prefix='/api/GOOGL')
 
 # API generator https://flask-restful.readthedocs.io/en/latest/api.html#id1
-api = Api(stocks_api)
+api = Api(GOOGL_api)
 
 class JokesAPI:
     # not implemented
@@ -17,22 +17,22 @@ class JokesAPI:
     # getJokes()
     class _Read(Resource):
         def get(self):
-            return jsonify(getJokes(jokes_data))
+            return jsonify(getJokes(GOOGL_data))
 
     # getJoke(id)
     class _ReadID(Resource):
         def get(self, id):
-            return jsonify(getJoke(jokes_data, id))
+            return jsonify(getJoke(GOOGL_data, id))
 
     # getRandomJoke()
     class _ReadRandom(Resource):
         def get(self):
-            return jsonify(getRandomJoke(jokes_data))
+            return jsonify(getRandomJoke(GOOGL_data))
     
     # getRandomJoke()
     class _ReadCount(Resource):
         def get(self):
-            count = countJokes(jokes_data)
+            count = countJokes(GOOGL_data)
             countMsg = {'count': count}
             return jsonify(countMsg)
         
