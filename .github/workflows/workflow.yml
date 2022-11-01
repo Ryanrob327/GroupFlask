@@ -1,7 +1,6 @@
 name: Deploy to Server
 on: [push]
 jobs:
-AWS-Deploy:
   runs-on: ubuntu-latest
   steps:
     - run: echo $ | base64 -d > key.pem
