@@ -5,54 +5,39 @@ import random
 
 from model_jokes import *
 
-joke_api = Blueprint('joke_api', __name__,
+stocks_api = Blueprint('stocks_api', __name__,
                    url_prefix='/api/stocks')
 
 # API generator https://flask-restful.readthedocs.io/en/latest/api.html#id1
-api = Api(joke_api)
+api = Api(stocks_api)
 
 class JokesAPI:
     # not implemented
-    class _Create(Resource):
-        def post(self, joke):
-            pass
             
     # getJokes()
     class _Read(Resource):
         def get(self):
-            return jsonify(getJokes())
+            return jsonify(getJokes(jokes_data))
 
     # getJoke(id)
     class _ReadID(Resource):
         def get(self, id):
-            return jsonify(getJoke(id))
+            return jsonify(getJoke(jokes_data, id))
 
     # getRandomJoke()
     class _ReadRandom(Resource):
         def get(self):
-            return jsonify(getRandomJoke())
+            return jsonify(getRandomJoke(jokes_data))
     
     # getRandomJoke()
     class _ReadCount(Resource):
         def get(self):
-            count = countJokes()
+            count = countJokes(jokes_data)
             countMsg = {'count': count}
             return jsonify(countMsg)
-
-    # put method: addJokeHaHa
-    class _UpdateLike(Resource):
-        def put(self, id):
-            addJokeHaHa(id)
-            return jsonify(getJoke(id))
-
-    # put method: addJokeBooHoo
-    class _UpdateJeer(Resource):
-        def put(self, id):
-            addJokeBooHoo(id)
-            return jsonify(getJoke(id))
+        
 
     # building RESTapi resources/interfaces, these routes are added to Web Server
-    api.add_resource(_Create, '/create/<string:joke>')
     api.add_resource(_Read, '/')
     api.add_resource(_ReadID, '/<int:id>')
     api.add_resource(_ReadRandom, '/random')
